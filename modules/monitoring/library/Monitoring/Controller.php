@@ -115,7 +115,7 @@ class Controller extends IcingaWebController
         ));
         foreach ($this->getRestrictions($name) as $filter) {
             if ($filter === '*') {
-                return Filter::matchAny();
+                return Filter::matchAll();
             }
             try {
                 $restriction->addFilter(Filter::fromQueryString($filter));
@@ -138,6 +138,11 @@ class Controller extends IcingaWebController
                 );
             }
         }
+
+        if ($restriction->isEmpty()) {
+            return Filter::matchAll();
+        }
+
         return $restriction;
     }
 }
