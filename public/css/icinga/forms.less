@@ -4,10 +4,27 @@
   margin: .5em 0;
 }
 
+.form-control {
+  display: inline-block;
+  float: right;
+
+  &:not(:last-child) {
+    margin-left: .5em;
+  }
+
+  &:last-child {
+    .clearfix();
+  }
+}
+
 .form-element label {
   width: 14em;
+  //todo(jem): make text-align depend on width of form (when flex switches to one-col the labels don't align
   text-align: right;
   margin-right: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .form-element input[type="text"],
@@ -21,10 +38,10 @@
 .form-element label,
 .form-element input,
 .form-element button,
-.form-controls button,
-.form-controls input,
 .form-element select,
-.form-element textarea {
+.form-element textarea,
+.form-controls button,
+.form-controls input {
   padding: .5625em;
   border-radius: .25em;
   font-size: inherit;
@@ -36,12 +53,11 @@
 }
 
 .form-element textarea {
-  background-image: url(../img/textarea-corner-2x.png);
+  background-image: url(../static/img?file=textarea-corner-2x.png&module_name=reporting);
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: 1em 1em;
 }
-
 
 .form-element select {
   padding-right: 1.5625em;
@@ -59,7 +75,7 @@
 }
 
 .form-element select {
-  background-image: url(../img/select-icon-2x.png);
+  background-image: url(../static/img?file=select-icon-2x.png&module_name=reporting);
   background-repeat: no-repeat;
   background-position: right center;
   background-size: contain;
@@ -67,7 +83,7 @@
 
 /* Primary button styles */
 .form-controls input[type="submit"] {
-  background: #0095BF;
+  background: @icinga-blue;
   color: white;
 }
 
@@ -94,8 +110,8 @@ input[type="submit"].remove-button {
 
 /* Default button styles */
 .form-controls button {
-  color: #0095bf;
-  border: 1px solid #0095bf;
+  color: @icinga-blue;
+  border: 1px solid @icinga-blue;
   background: none;
 }
 
@@ -108,11 +124,11 @@ input[type="submit"].remove-button {
 
 input[type="checkbox"] {
   display: inline-block;
-  border: 1px solid #DAE3E6;
+  border: 1px solid #becbcf; //2px solid #becbcf;
   background: #DAE3E6;
   position: relative;
-  height: 1.5em;
-  width: 3em;
+  height: 18px; //pixel value: 24px; //original value: 1.5em;
+  width: 31px; //pixel value: 42px; //original value: 3em;
   margin: .313em 0;
   vertical-align: middle;
   border-radius: 1em;
@@ -123,7 +139,7 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:hover {
   cursor: pointer;
-  background: gray
+  background: #a5c4cd;
 }
 
 input[type="checkbox"]:before {
@@ -131,29 +147,27 @@ input[type="checkbox"]:before {
   content: "";
   display: block;
   position: absolute;
-  width: 1.25em;
-  height: 1.25em;
-  top: 0em;
-  left: 0em;
-  background: white;
+  width: 16px; //pixel value: 20px; //original value: 1.25em;
+  height: 16px; //pixel value: 20px; //original value: 1.25em;
+  top: 0;
+  left: 0;
+  background: #dae3e6;
+  border: 1px solid @body-bg-color; //2px solid white;
   transition: left .2s ease;
-  -webkit-box-shadow: 0 0 4px rgba(0,0,0,.5);
-  -moz-box-shadow: 0 0 4px rgba(0,0,0,.5);
-  box-shadow: 0 0 4px rgba(0,0,0,.5);
 }
 
 input[type="checkbox"]:checked {
-  border-color: #0095bf;
-  background: rgba(0, 149, 191, 0.3)
+  border-color: @icinga-blue;
+  background: #b5e0ed;
 }
 
 input[type="checkbox"]:checked:hover {
-  background: maroon;
+  background: #dae3e6;
 }
 
 input[type="checkbox"]:checked:before {
-  left: 1.5em;
-  background: #0095bf;
+  left: 13px; //pixel value: 18px; //original value: 1.5em;
+  background: @icinga-blue;
 }
 
 /* disabled */
