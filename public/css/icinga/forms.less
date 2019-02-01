@@ -121,41 +121,17 @@
                                                button styles
 ***********************************************************************************************************************/
 
-.form-controls input[type="submit"] {
-  background: @icinga-blue;
-  color: white;
+.form-controls input[type="submit"],
+input[type="submit"].btn-confirm {
+  .button();
 }
 
-.form-controls button:hover {
-  background: rgba(0,0,0,.1);
-  cursor: pointer;
+input[type="submit"].btn-remove {
+  .button(@color-critical, darken(@color-critical, 10%));
 }
 
-input[type="submit"].remove-button {
-  background-color: white;
-  border: 1px solid @color-critical;
-  color: @color-critical;
-
-  &:hover {
-    background-color: @color-critical;
-    color: white;
-  }
-}
-
-.form-controls button:hover {
-  background: rgba(0,0,0,.1);
-  cursor: pointer;
-}
-
-.form-controls button {
-  background: none;
-  border: 1px solid @icinga-blue;
-  color: @icinga-blue;
-}
-
-.form-controls input:hover {
-  background: @low-sat-blue;
-  cursor: pointer;
+input[type="submit"].btn-cancel {
+  .button(@gray, @black);
 }
 
 /**********************************************************************************************************************
