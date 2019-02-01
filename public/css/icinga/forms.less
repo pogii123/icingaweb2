@@ -1,8 +1,16 @@
+/**********************************************************************************************************************
+                                   used colors (move to base.less eventually)
+***********************************************************************************************************************/
+
 @disabled-gray: #9a9a9a;
 @low-sat-blue: #dae3e6;
 @low-sat-blue-dark: #becbcf;
 @icinga-blue-light: #a5c4cd;
 @icinga-blue-dark: #0081a6;
+
+/**********************************************************************************************************************
+                                             general form layout
+***********************************************************************************************************************/
 
 .form-element,
 .form-controls {
@@ -26,9 +34,13 @@
   display: flex;
 }
 
+/**********************************************************************************************************************
+                                                 label styles
+***********************************************************************************************************************/
+
 .control-group .control-label-group {
   display: inline-block;
-  //todo(jem): make text-align depend on width of form (when flex switches to one-col the .control-label-groups don't align
+  //todo(jem): make text-align depend on width of form (when flex switches to one-col the labels don't align
   margin: .5em 1em 0.5em 0;
   overflow: hidden;
   text-align: right;
@@ -38,6 +50,10 @@
   width: 14em;
   //todo(jem): maybe solve width with flexbox flex-growth: 1
 }
+
+/**********************************************************************************************************************
+                                               general input styles
+***********************************************************************************************************************/
 
 //todo(jem): solve width with flex-growth: 6 combined with label
 .control-group input[type="text"],
@@ -65,6 +81,10 @@
       -ms-appearance: none;
           appearance: none;
 }
+
+/**********************************************************************************************************************
+                                             specific input styles
+***********************************************************************************************************************/
 
 .control-group textarea {
   background-image: url(../static/img?file=textarea-corner-2x.png&module_name=reporting);
@@ -95,7 +115,10 @@
   background-size: contain;
 }
 
-/* Primary button styles */
+/**********************************************************************************************************************
+                                               button styles
+***********************************************************************************************************************/
+
 .form-controls input[type="submit"] {
   background: @icinga-blue;
   color: white;
@@ -122,7 +145,6 @@ input[type="submit"].remove-button {
   cursor: pointer;
 }
 
-/* Default button styles */
 .form-controls button {
   background: none;
   border: 1px solid @icinga-blue;
@@ -134,7 +156,9 @@ input[type="submit"].remove-button {
   cursor: pointer;
 }
 
-/* IPL toggle styles */
+/**********************************************************************************************************************
+                                               IPL toggle styles
+***********************************************************************************************************************/
 
 input[type="checkbox"] {
   -webkit-appearance: none;
@@ -191,7 +215,10 @@ input[type="checkbox"]:checked:before {
   margin-left: -4/3em;
 }
 
-/* disabled */
+/**********************************************************************************************************************
+                                                 disabled inputs
+***********************************************************************************************************************/
+
 .control-group.disabled .control-label-group {
   color: @disabled-gray;
 }
@@ -208,6 +235,10 @@ input[type="checkbox"]:checked:before {
     background-color: @gray-lightest;
   }
 }
+
+/**********************************************************************************************************************
+                                          errors and additional information
+***********************************************************************************************************************/
 
 .form-element-error {
   color: @color-critical;
