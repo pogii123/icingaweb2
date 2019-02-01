@@ -10,6 +10,7 @@
 @icinga-blue-light: #a5c4cd;
 @icinga-blue-dark: #0081a6;
 
+
 /**********************************************************************************************************************
                                              general form layout
 ***********************************************************************************************************************/
@@ -78,10 +79,7 @@
   font-size: inherit;
   margin: .5em 1em 0.5em 0;
   padding: .5625em;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-      -ms-appearance: none;
-          appearance: none;
+  .appearance(none);
 }
 
 /**********************************************************************************************************************
@@ -139,10 +137,7 @@
 ***********************************************************************************************************************/
 
 input[type="checkbox"] {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-      -ms-appearance: none;
-          appearance: none;
+  .appearance(none);
   border-radius: 1em;
   border: 1px solid @low-sat-blue-dark;
   box-sizing: content-box;
