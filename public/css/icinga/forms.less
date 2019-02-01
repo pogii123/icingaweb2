@@ -135,7 +135,7 @@
                                                IPL toggle styles
 ***********************************************************************************************************************/
 
-input[type="checkbox"] {
+.control-group input[type="checkbox"] {
   .appearance(none);
   border-radius: 1em;
   border: 1px solid @low-sat-blue-dark;
@@ -150,12 +150,12 @@ input[type="checkbox"] {
   width: 8/3em;
 }
 
-input[type="checkbox"]:hover {
+.control-group input[type="checkbox"]:hover {
   background: @icinga-blue-light;
   cursor: pointer;
 }
 
-input[type="checkbox"]:before {
+.control-group input[type="checkbox"]:before {
   position: absolute;
   top: 0;
   left: 0;
@@ -172,16 +172,16 @@ input[type="checkbox"]:before {
   width: 4/3em;
 }
 
-input[type="checkbox"]:checked {
+.control-group input[type="checkbox"]:checked {
   background: #b5e0ed;
   border-color: @icinga-blue;
 }
 
-input[type="checkbox"]:checked:hover {
+.control-group input[type="checkbox"]:checked:hover {
   background: @low-sat-blue;
 }
 
-input[type="checkbox"]:checked:before {
+.control-group input[type="checkbox"]:checked:before {
   background: @icinga-blue;
   left: 100%;
   margin-left: -4/3em;
