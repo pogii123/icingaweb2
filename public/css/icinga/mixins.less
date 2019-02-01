@@ -6,7 +6,7 @@
           box-shadow: @arguments;
 }
 
-.button(@border-font-color: @icinga-blue, @color-dark: @icinga-blue-dark, @background-color: @body-bg-color) {
+.button( @background-color: @body-bg-color, @border-font-color: @icinga-blue, @color-dark: darken(@border-font-color, 10%)) {
   .rounded-corners(3px);
 
   background-color: @background-color;
@@ -17,12 +17,11 @@
   outline: none;
   padding: @vertical-padding @horizontal-padding;
 
-  // Transition mixin does not work w/ comma-separated transitions
+
   @duration: 0.2s;
-  -webkit-transition: background @duration, border @duration ease, color @duration ease;
-     -moz-transition: background @duration, border @duration ease, color @duration ease;
-       -o-transition: background @duration, border @duration ease, color @duration ease;
-          transition: background @duration, border @duration ease, color @duration ease;
+  //throwaway local variable because transition mixin does not work w/ comma-separated transitions
+  @transition: background @duration, border @duration ease, color @duration ease;
+  .transition(@transition);
 
   &:focus,
   &:hover,
@@ -41,7 +40,6 @@
     text-decoration: none;
   }
 }
-
 
 .clearfix {
   &:after {
