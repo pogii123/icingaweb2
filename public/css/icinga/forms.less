@@ -1,7 +1,8 @@
-form {
-  display: flex;
-  flex-direction: column;
-}
+@disabled-gray: #9a9a9a;
+@low-sat-blue: #dae3e6;
+@low-sat-blue-dark: #becbcf;
+@icinga-blue-light: #a5c4cd;
+@icinga-blue-dark: #0081a6;
 
 .form-element,
 .form-controls {
@@ -26,23 +27,25 @@ form {
 }
 
 .control-group .control-label-group {
-  margin: .5em 1em 0.5em 0;
-  width: 14em;
   display: inline-block;
   //todo(jem): make text-align depend on width of form (when flex switches to one-col the .control-label-groups don't align
-  text-align: right;
-  white-space: nowrap;
+  margin: .5em 1em 0.5em 0;
   overflow: hidden;
+  text-align: right;
   text-overflow: ellipsis;
   vertical-align: baseline;
+  white-space: nowrap;
+  width: 14em;
+  //todo(jem): maybe solve width with flexbox flex-growth: 1
 }
 
+//todo(jem): solve width with flex-growth: 6 combined with label
 .control-group input[type="text"],
 .control-group input[type="password"],
 .control-group textarea,
 .control-group select {
+  background: @low-sat-blue;
   flex-grow: 1;
-  background: #DAE3E6;
 }
 
 .control-group .control-label-group,
@@ -52,15 +55,15 @@ form {
 .control-group textarea,
 .form-controls button,
 .form-controls input {
-  margin: .5em 1em 0.5em 0;
-  padding: .5625em;
+  border: none;
   border-radius: .25em;
   font-size: inherit;
-  border: none;
+  margin: .5em 1em 0.5em 0;
+  padding: .5625em;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+      -ms-appearance: none;
+          appearance: none;
 }
 
 .control-group textarea {
@@ -105,8 +108,8 @@ form {
 
 input[type="submit"].remove-button {
   background-color: white;
-  color: @color-critical;
   border: 1px solid @color-critical;
+  color: @color-critical;
 
   &:hover {
     background-color: @color-critical;
@@ -121,26 +124,27 @@ input[type="submit"].remove-button {
 
 /* Default button styles */
 .form-controls button {
-  color: @icinga-blue;
-  border: 1px solid @icinga-blue;
   background: none;
+  border: 1px solid @icinga-blue;
+  color: @icinga-blue;
 }
 
 .form-controls input:hover {
+  background: @low-sat-blue;
   cursor: pointer;
-  background: #dae3e6;
 }
 
 /* IPL toggle styles */
 
 input[type="checkbox"] {
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+      -ms-appearance: none;
+          appearance: none;
   border-radius: 1em;
-  border: 1px solid #becbcf;
+  border: 1px solid @low-sat-blue-dark;
   box-sizing: content-box;
-  background: #DAE3E6;
+  background: @low-sat-blue;
   display: inline-block;
   height: 4/3em;
   padding: 0;
@@ -151,15 +155,16 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:hover {
+  background: @icinga-blue-light;
   cursor: pointer;
-  background: #a5c4cd;
 }
 
 input[type="checkbox"]:before {
   position: absolute;
   top: 0;
   left: 0;
-  background: #dae3e6;
+
+  background: @low-sat-blue;
   border-radius: 1em;
   border: 1px solid @body-bg-color;
   box-sizing: border-box;
@@ -177,7 +182,7 @@ input[type="checkbox"]:checked {
 }
 
 input[type="checkbox"]:checked:hover {
-  background: #dae3e6;
+  background: @low-sat-blue;
 }
 
 input[type="checkbox"]:checked:before {
@@ -187,39 +192,36 @@ input[type="checkbox"]:checked:before {
 }
 
 /* disabled */
-.form-element.disabled .control-label-group {
-  color: #9a9a9a
+.control-group.disabled .control-label-group {
+  color: @disabled-gray;
 }
 
-.form-element.disabled input {
-  background: #f5f5f5;
+.control-group.disabled input {
+  background: @gray-lightest;
   border: none;
 }
 
-.form-element.disabled input[type="checkbox"] {
-  border: 1px solid #f5f5f5;
-}
+.control-group.disabled input[type="checkbox"] {
+  border: 1px solid @gray-lightest;
 
-.form-element.disabled input[type="checkbox"]:before {
-  -webkit-box-shadow: 0 0 4px rgba(0,0,0,.1);
-  -moz-box-shadow: 0 0 4px rgba(0,0,0,.1);
-  box-shadow: 0 0 4px rgba(0,0,0,.1);
+  &:hover {
+    background-color: @gray-lightest;
+  }
 }
 
 .form-element-error {
-  width: 100%;
+  color: @color-critical;
   margin: 0 0 0.5em 15em;
   padding: 0.5625em;
-  color: @color-critical;
+  width: 100%;
 }
 
 .control-group {
   flex-wrap: wrap;
 }
 
-
 .form-info {
-  list-style: none;
   color: @text-color-light;
   font-size: @font-size-small;
+  list-style: none;
 }
