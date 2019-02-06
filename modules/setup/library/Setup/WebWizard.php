@@ -576,6 +576,7 @@ class WebWizard extends Wizard implements SetupWizard
         )));
 
         $set->add(new PhpConfigRequirement(array(
+            'optional'      => true,
             'condition'     => array('date.timezone', true),
             'title'         => mt('setup', 'Default Timezone'),
             'description'   => sprintf(
