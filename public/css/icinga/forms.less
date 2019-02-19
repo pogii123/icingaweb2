@@ -14,9 +14,34 @@
                                              general form layout
 ***********************************************************************************************************************/
 
+form:not(.inline) {
+  max-width: 70em;
+  width: 80%;
+}
+
+#layout.minimal-layout {
+  form:not(.inline) {
+    width: 100%;
+
+    .control-label-group {
+      min-width: auto;
+      margin-bottom: 0;
+      padding-left: 0;
+      padding-bottom: 0;
+      text-align: left;
+      width: 100%;
+    }
+
+    .form-controls {
+      margin-left: 0;
+    }
+  }
+}
+
 .form-element,
 .form-controls {
   display: flex;
+  margin-left: 15em;
 }
 
 .form-control {
@@ -57,9 +82,10 @@
                                                general input styles
 ***********************************************************************************************************************/
 
-//todo(jem): solve width with flex-growth: 6 combined with label
+//todo(jem): solve width with flex-grow: 6 combined with label
 .control-group input[type="text"],
 .control-group input[type="password"],
+.control-group input[type="number"],
 .control-group textarea,
 .control-group select {
   background: @low-sat-blue;
@@ -260,6 +286,7 @@ input.search {
   color: @text-color-light;
   font-size: @font-size-small;
   list-style: none;
+  padding-left: 0;
 }
 
 /**********************************************************************************************************************

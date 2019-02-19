@@ -15,7 +15,7 @@ class LimiterControlForm extends Form
      *
      * @var string
      */
-    const CSS_CLASS_LIMITER = 'limiter-control';
+    const CSS_CLASS_LIMITER = 'limiter-control inline';
 
     /**
      * Default limit
