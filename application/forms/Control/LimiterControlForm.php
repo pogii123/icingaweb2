@@ -37,6 +37,15 @@ class LimiterControlForm extends Form
         500 => '500'
     );
 
+    public static $defaultElementDecorators = array(
+        array('Label', array('tag'=>'span', 'separator' => '')),
+        array('Help', array('placement' => 'APPEND')),
+        array(array('labelWrap' => 'HtmlTag'), array('tag' => 'div')),
+        array('ViewHelper', array('separator' => '')),
+        array('Errors', array('separator' => '')),
+        array('HtmlTag', array('tag' => 'div', 'class' => 'limiter-control-form'))
+    );
+
     /**
      * Default limit for this instance
      *
