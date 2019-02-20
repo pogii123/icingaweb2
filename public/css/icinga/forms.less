@@ -36,6 +36,10 @@ form:not(.inline) {
       margin-left: 0;
     }
   }
+
+  .control-info:before {
+    margin-left: -0.5em;
+  }
 }
 
 .form-element,
@@ -80,6 +84,11 @@ form:not(.inline) {
 
 .control-info {
   width: 0;
+  line-height: 3.5em;
+}
+
+.spinner {
+  display: none;
 }
 
 /**********************************************************************************************************************
@@ -207,7 +216,7 @@ input.search {
   display: inline-block;
   height: 4/3em;
   padding: 0;
-  margin: .313em 0;
+  margin: 1em 0.5em 1em 0;
   position: relative;
   vertical-align: middle;
   width: 8/3em;
