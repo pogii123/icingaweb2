@@ -37,6 +37,10 @@ form:not(.inline) {
     }
   }
 
+  input[type="checkbox"] ~ .control-info:before {
+    margin-left: 0;
+  }
+
   .control-info:before {
     margin-left: -0.5em;
   }
@@ -83,13 +87,25 @@ form:not(.inline) {
 }
 
 .control-info {
-  width: 0;
   line-height: 3.5em;
+  width: 0;
 }
 
+
 .spinner {
-  display: none;
+  line-height: 3.5em;
+  width: 0;
+
+  &:before {
+    margin-left: 2em;
+  }
 }
+
+
+select ~ .spinner:before {
+  margin-left: -4em;
+}
+
 
 /**********************************************************************************************************************
                                                general input styles
