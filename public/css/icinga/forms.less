@@ -118,7 +118,7 @@ select ~ .spinner:before {
 .control-group textarea,
 .control-group select {
   background: @low-sat-blue;
-  flex-grow: 1;
+  flex: 1;
 }
 
 .control-group .control-label-group,
@@ -139,6 +139,10 @@ select ~ .spinner:before {
 /**********************************************************************************************************************
                                              specific input styles
 ***********************************************************************************************************************/
+
+.control-group select[multiple="multiple"] {
+  background-size: auto;
+}
 
 input.search {
   .transition(border 0.3s ease);
