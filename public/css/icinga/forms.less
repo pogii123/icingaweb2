@@ -230,11 +230,10 @@ input.search {
 .control-group input[type="checkbox"] {
   .appearance(none);
   background: @low-sat-blue;
-  border: 1px solid @low-sat-blue;
   border-radius: 1em;
   box-sizing: content-box;
   display: inline-block;
-  height: 4/3em;
+  height: 9/6em;
   padding: 0;
   margin: 1em 0.5em 1em 0;
   position: relative;
@@ -243,8 +242,8 @@ input.search {
 
   &:before {
     position: absolute;
-    top: 0;
     left: 0;
+    top: 50%;
 
     background: @text-color-inverted;
     border-radius: 1em;
@@ -252,57 +251,43 @@ input.search {
     content: "";
     display: block;
     height: 4/3em;
-    margin-left: 0;
+    margin-left: 1/12em;
+    margin-top: -4/6em;
     transition: left .2s ease, margin .2s ease;
     width: 4/3em;
   }
 
   &:hover {
     background: @icinga-blue-light;
-    border-color: @icinga-blue-light;
     cursor: pointer;
-
-    &:before {
-      border-color: @icinga-blue-light;
-    }
   }
 }
 
 
 .control-group input[type="checkbox"]:checked {
   background: @icinga-blue;
-  border-color: @icinga-blue;
 
   &:before {
     background: @text-color-inverted;
-    border-color: @icinga-blue;
     left: 100%;
-    right: 0;
-    margin-left: -4/3em;
+    margin-left: -17/12em;
   }
 
   &:hover {
     background: @icinga-blue-light;
-    border-color: @icinga-blue-light;
-    &:before {
-      border-color: @icinga-blue-light;
-    }
   }
 }
 
 .control-group input[type="checkbox"]:disabled {
   background-color: @low-sat-blue;
-  border-color: @low-sat-blue;
   &:before {
     background-color: @low-sat-blue;
     border: 1px solid @low-sat-blue-dark;
   }
   &:hover {
     background-color: @low-sat-blue;
-    border-color: @low-sat-blue;
     &:before {
       background-color: @low-sat-blue;
-      border-color: @low-sat-blue-dark;
     }
   }
 }
