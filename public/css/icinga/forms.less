@@ -74,16 +74,14 @@ form:not(.inline) {
 ***********************************************************************************************************************/
 
 .control-group .control-label-group {
-  display: inline-block;
-  //todo(jem): make text-align depend on width of form (when flex switches to one-col the labels don't align
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
   margin: .5em 1em 0.5em 0;
-  overflow: hidden;
+  max-height: 2.5em;
   text-align: right;
-  text-overflow: ellipsis;
-  vertical-align: baseline;
-  white-space: nowrap;
-  width: 14em;
-  //todo(jem): maybe solve width with flexbox flex-growth: 1
+  width: 15em;
 }
 
 .control-info {
@@ -108,7 +106,6 @@ select ~ .spinner:before {
                                                general input styles
 ***********************************************************************************************************************/
 
-//todo(jem): solve width with flex-grow: 6 combined with label
 .control-group input[type="text"],
 .control-group input[type="password"],
 .control-group input[type="number"],
