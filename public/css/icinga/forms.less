@@ -223,15 +223,13 @@ input.search {
 
 .control-group input[type="checkbox"] {
   .appearance(none);
+  position: relative;
+
   background: @low-sat-blue;
   border-radius: 1em;
-  box-sizing: content-box;
-  display: inline-block;
   height: 9/6em;
   padding: 0;
   margin: 1em 0.5em 1em 0;
-  position: relative;
-  vertical-align: middle;
   width: 8/3em;
 
   &:before {
@@ -240,10 +238,8 @@ input.search {
     top: 50%;
 
     background: @text-color-inverted;
-    border-radius: 1em;
-    box-sizing: border-box;
+    border-radius: 50%;
     content: "";
-    display: block;
     height: 4/3em;
     margin-left: 1/12em;
     margin-top: -4/6em;
@@ -272,16 +268,14 @@ input.search {
 }
 
 .control-group input[type="checkbox"]:disabled {
-  background-color: @low-sat-blue;
-  &:before {
+  &,
+  &:before,
+  &:hover,
+  &:hover:before {
     background-color: @low-sat-blue;
-    border: 1px solid @low-sat-blue-dark;
   }
-  &:hover {
-    background-color: @low-sat-blue;
-    &:before {
-      background-color: @low-sat-blue;
-    }
+  &:before {
+    border: 1px solid @low-sat-blue-dark;
   }
 }
 
